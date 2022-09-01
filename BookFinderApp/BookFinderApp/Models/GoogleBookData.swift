@@ -1,5 +1,5 @@
 //
-//  BookData.swift
+//  GoogleBookData.swift
 //  BookFinderApp
 //
 //  Created by 김나희 on 9/1/22.
@@ -7,9 +7,10 @@
 
 import Foundation
 
-// MARK: - BookData
-struct BookData {
-    let kind, id, etag: String
+// MARK: - GoogleBookData
+struct GoogleBookData {
+    let id: String
+    let kind, etag: String
     let selfLink: String
     let volumeInfo: VolumeInfo
     let saleInfo: SaleInfo
