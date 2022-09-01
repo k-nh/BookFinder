@@ -18,6 +18,8 @@
 		FDBB755E28BFD2E10087EC43 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FDBB755D28BFD2E10087EC43 /* SnapKit */; };
 		FDBB756128BFD2EE0087EC43 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = FDBB756028BFD2EE0087EC43 /* Then */; };
 		FDBB756428BFD2FC0087EC43 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FDBB756328BFD2FC0087EC43 /* Alamofire */; };
+		FDBB756728BFD4160087EC43 /* GoogleBookRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB756628BFD4160087EC43 /* GoogleBookRequestManager.swift */; };
+		FDBB756A28BFD46F0087EC43 /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB756928BFD46F0087EC43 /* BookData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		FDBB754828BFCFD60087EC43 /* BookFinderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookFinderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDBB754C28BFCFD60087EC43 /* BookFinderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFinderAppUITests.swift; sourceTree = "<group>"; };
 		FDBB754E28BFCFD60087EC43 /* BookFinderAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFinderAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FDBB756628BFD4160087EC43 /* GoogleBookRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookRequestManager.swift; sourceTree = "<group>"; };
+		FDBB756928BFD46F0087EC43 /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,9 @@
 				FDBB752B28BFCFD50087EC43 /* AppDelegate.swift */,
 				FDBB752D28BFCFD50087EC43 /* SceneDelegate.swift */,
 				FDBB752F28BFCFD50087EC43 /* ViewController.swift */,
+				FDBB756828BFD4440087EC43 /* Model */,
+				FDBB756528BFD39D0087EC43 /* Services */,
+				FDBB756B28BFD48E0087EC43 /* Workers */,
 				FDBB753428BFCFD60087EC43 /* Assets.xcassets */,
 				FDBB753628BFCFD60087EC43 /* LaunchScreen.storyboard */,
 				FDBB753928BFCFD60087EC43 /* Info.plist */,
@@ -128,6 +135,29 @@
 				FDBB754E28BFCFD60087EC43 /* BookFinderAppUITestsLaunchTests.swift */,
 			);
 			path = BookFinderAppUITests;
+			sourceTree = "<group>";
+		};
+		FDBB756528BFD39D0087EC43 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FDBB756628BFD4160087EC43 /* GoogleBookRequestManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FDBB756828BFD4440087EC43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FDBB756928BFD46F0087EC43 /* BookData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FDBB756B28BFD48E0087EC43 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +303,8 @@
 				FDBB753028BFCFD50087EC43 /* ViewController.swift in Sources */,
 				FDBB752C28BFCFD50087EC43 /* AppDelegate.swift in Sources */,
 				FDBB752E28BFCFD50087EC43 /* SceneDelegate.swift in Sources */,
+				FDBB756A28BFD46F0087EC43 /* BookData.swift in Sources */,
+				FDBB756728BFD4160087EC43 /* GoogleBookRequestManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
