@@ -1,5 +1,5 @@
 //
-//  SearchInteractor.swift
+//  MainInteractor.swift
 //  BookFinderApp
 //
 //  Created by 김나희 on 9/1/22.
@@ -12,26 +12,27 @@
 
 import UIKit
 
-protocol SearchBusinessLogic {
-  func doSomething(request: Search.Something.Request)
+protocol MainBusinessLogic {
+  func doSomething(request: Main.BookData.Request)
 }
 
-protocol SearchDataStore {
+protocol MainDataStore {
   //var name: String { get set }
 }
 
-class SearchInteractor: SearchBusinessLogic, SearchDataStore {
-  var presenter: SearchPresentationLogic?
-  var worker: SearchWorker?
+class MainInteractor: MainBusinessLogic, MainDataStore {
+  var presenter: MainPresentationLogic?
+  var worker: MainWorker?
   //var name: String = ""
   
   // MARK: Do something
   
-  func doSomething(request: Search.Something.Request) {
-    worker = SearchWorker()
+  func doSomething(request: Main.BookData.Request) {
+    print(request)
+    worker = MainWorker()
     worker?.doSomeWork()
     
-    let response = Search.Something.Response()
+    let response = Main.BookData.Response(books: [])
     presenter?.presentSomething(response: response)
   }
 }

@@ -1,5 +1,5 @@
 //
-//  SearchRouter.swift
+//  MainRouter.swift
 //  BookFinderApp
 //
 //  Created by 김나희 on 9/1/22.
@@ -12,17 +12,17 @@
 
 import UIKit
 
-@objc protocol SearchRoutingLogic {
+@objc protocol MainRoutingLogic {
   //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol SearchDataPassing {
-  var dataStore: SearchDataStore? { get }
+protocol MainDataPassing {
+  var dataStore: MainDataStore? { get }
 }
 
-class SearchRouter: NSObject, SearchRoutingLogic, SearchDataPassing {
-  weak var viewController: SearchViewController?
-  var dataStore: SearchDataStore?
+class MainRouter: NSObject, MainRoutingLogic, MainDataPassing {
+  weak var viewController: MainViewController?
+  var dataStore: MainDataStore?
   
   // MARK: Routing
   
@@ -43,14 +43,14 @@ class SearchRouter: NSObject, SearchRoutingLogic, SearchDataPassing {
 
   // MARK: Navigation
   
-  //func navigateToSomewhere(source: SearchViewController, destination: SomewhereViewController)
+  //func navigateToSomewhere(source: MainViewController, destination: SomewhereViewController)
   //{
   //  source.show(destination, sender: nil)
   //}
   
   // MARK: Passing data
   
-  //func passDataToSomewhere(source: SearchDataStore, destination: inout SomewhereDataStore)
+  //func passDataToSomewhere(source: MainDataStore, destination: inout SomewhereDataStore)
   //{
   //  destination.name = source.name
   //}

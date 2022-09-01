@@ -1,5 +1,5 @@
 //
-//  SearchWorker.swift
+//  MainWorker.swift
 //  BookFinderApp
 //
 //  Created by 김나희 on 9/1/22.
@@ -12,7 +12,7 @@
 
 import UIKit
 
-class SearchWorker {
+class MainWorker {
   func doSomeWork() {
   }
 }
