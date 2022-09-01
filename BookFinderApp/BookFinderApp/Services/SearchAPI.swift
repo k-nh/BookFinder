@@ -1,18 +1,19 @@
 //
-//  GoogleBookRequestManager.swift
+//  SearchAPI.swift
 //  BookFinderApp
 //
 //  Created by 김나희 on 9/1/22.
 //
 
 import Foundation
-import Alamofire
 
-enum GoogleBookRequestManager: URLRequestConvertible {
+enum SearchAPI {
     case search(String)
-
-    var baseURL: String {
-        return "https://www.googleapis.com/books/v1"
+    
+    private static let baseURL = "https://www.googleapis.com/books/v1"
+    
+    var url: URL {
+        return URL(string: SearchAPI.baseURL)!
     }
     
     var method: HTTPMethod {
@@ -37,11 +38,12 @@ enum GoogleBookRequestManager: URLRequestConvertible {
     }
     
     public func asURLRequest() throws -> URLRequest {
-        let url = try baseURL.asURL().appendingPathComponent(path)
-        var urlRequest = try URLRequest(url: url, method: method)
+        let url = URL(string: SearchAPI.baseURL)!.appendingPathComponent(path)
+        var urlRequest = URLRequest(url: url)
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         components?.queryItems = query
         urlRequest.url = components?.url
+        urlRequest.httpMethod = method.rawValue
 
         return urlRequest
     }

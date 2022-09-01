@@ -16,15 +16,17 @@
 		FDBB754F28BFCFD60087EC43 /* BookFinderAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB754E28BFCFD60087EC43 /* BookFinderAppUITestsLaunchTests.swift */; };
 		FDBB755E28BFD2E10087EC43 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FDBB755D28BFD2E10087EC43 /* SnapKit */; };
 		FDBB756128BFD2EE0087EC43 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = FDBB756028BFD2EE0087EC43 /* Then */; };
-		FDBB756428BFD2FC0087EC43 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FDBB756328BFD2FC0087EC43 /* Alamofire */; };
-		FDBB756728BFD4160087EC43 /* GoogleBookRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB756628BFD4160087EC43 /* GoogleBookRequestManager.swift */; };
+		FDBB756728BFD4160087EC43 /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB756628BFD4160087EC43 /* SearchAPI.swift */; };
 		FDBB758828C079DA0087EC43 /* GoogleBookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB758728C079DA0087EC43 /* GoogleBookData.swift */; };
-		FDBB75B628C0BFC20087EC43 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75B028C0BFC20087EC43 /* MainPresenter.swift */; };
-		FDBB75B728C0BFC20087EC43 /* MainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75B128C0BFC20087EC43 /* MainWorker.swift */; };
-		FDBB75B828C0BFC20087EC43 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75B228C0BFC20087EC43 /* MainRouter.swift */; };
-		FDBB75B928C0BFC20087EC43 /* MainModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75B328C0BFC20087EC43 /* MainModels.swift */; };
-		FDBB75BA28C0BFC20087EC43 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75B428C0BFC20087EC43 /* MainViewController.swift */; };
-		FDBB75BB28C0BFC20087EC43 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75B528C0BFC20087EC43 /* MainInteractor.swift */; };
+		FDBB75CB28C0D7E90087EC43 /* SearchAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75CA28C0D7E90087EC43 /* SearchAPIProvider.swift */; };
+		FDBB75CD28C0D83A0087EC43 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75CC28C0D83A0087EC43 /* HTTPMethod.swift */; };
+		FDBB75DE28C124080087EC43 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75DD28C124080087EC43 /* APIError.swift */; };
+		FDBB75E628C126870087EC43 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75E028C126870087EC43 /* MainViewController.swift */; };
+		FDBB75E728C126870087EC43 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75E128C126870087EC43 /* MainInteractor.swift */; };
+		FDBB75E828C126870087EC43 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75E228C126870087EC43 /* MainPresenter.swift */; };
+		FDBB75E928C126870087EC43 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75E328C126870087EC43 /* MainRouter.swift */; };
+		FDBB75EA28C126870087EC43 /* MainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75E428C126870087EC43 /* MainWorker.swift */; };
+		FDBB75EB28C126870087EC43 /* MainModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75E528C126870087EC43 /* MainModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,14 +58,17 @@
 		FDBB754828BFCFD60087EC43 /* BookFinderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookFinderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDBB754C28BFCFD60087EC43 /* BookFinderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFinderAppUITests.swift; sourceTree = "<group>"; };
 		FDBB754E28BFCFD60087EC43 /* BookFinderAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFinderAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		FDBB756628BFD4160087EC43 /* GoogleBookRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookRequestManager.swift; sourceTree = "<group>"; };
+		FDBB756628BFD4160087EC43 /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
 		FDBB758728C079DA0087EC43 /* GoogleBookData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleBookData.swift; sourceTree = "<group>"; };
-		FDBB75B028C0BFC20087EC43 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		FDBB75B128C0BFC20087EC43 /* MainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorker.swift; sourceTree = "<group>"; };
-		FDBB75B228C0BFC20087EC43 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
-		FDBB75B328C0BFC20087EC43 /* MainModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModels.swift; sourceTree = "<group>"; };
-		FDBB75B428C0BFC20087EC43 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		FDBB75B528C0BFC20087EC43 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		FDBB75CA28C0D7E90087EC43 /* SearchAPIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPIProvider.swift; sourceTree = "<group>"; };
+		FDBB75CC28C0D83A0087EC43 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		FDBB75DD28C124080087EC43 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		FDBB75E028C126870087EC43 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FDBB75E128C126870087EC43 /* MainInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		FDBB75E228C126870087EC43 /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		FDBB75E328C126870087EC43 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		FDBB75E428C126870087EC43 /* MainWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWorker.swift; sourceTree = "<group>"; };
+		FDBB75E528C126870087EC43 /* MainModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDBB756428BFD2FC0087EC43 /* Alamofire in Frameworks */,
 				FDBB755E28BFD2E10087EC43 /* SnapKit in Frameworks */,
 				FDBB756128BFD2EE0087EC43 /* Then in Frameworks */,
 			);
@@ -121,7 +125,6 @@
 				FDBB752D28BFCFD50087EC43 /* SceneDelegate.swift */,
 				FDBB756828BFD4440087EC43 /* Models */,
 				FDBB756528BFD39D0087EC43 /* Services */,
-				FDBB75AD28C07FD40087EC43 /* Workers */,
 				FDBB758A28C079ED0087EC43 /* Scenes */,
 				FDBB753428BFCFD60087EC43 /* Assets.xcassets */,
 				FDBB753628BFCFD60087EC43 /* LaunchScreen.storyboard */,
@@ -150,7 +153,10 @@
 		FDBB756528BFD39D0087EC43 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FDBB756628BFD4160087EC43 /* GoogleBookRequestManager.swift */,
+				FDBB756628BFD4160087EC43 /* SearchAPI.swift */,
+				FDBB75CA28C0D7E90087EC43 /* SearchAPIProvider.swift */,
+				FDBB75DD28C124080087EC43 /* APIError.swift */,
+				FDBB75CC28C0D83A0087EC43 /* HTTPMethod.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -166,30 +172,23 @@
 		FDBB758A28C079ED0087EC43 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				FDBB758B28C079ED0087EC43 /* Main */,
+				FDBB75DF28C126870087EC43 /* Main */,
 			);
 			name = Scenes;
 			path = BookFinderApp/Scenes;
 			sourceTree = SOURCE_ROOT;
 		};
-		FDBB758B28C079ED0087EC43 /* Main */ = {
+		FDBB75DF28C126870087EC43 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FDBB75B028C0BFC20087EC43 /* MainPresenter.swift */,
-				FDBB75B128C0BFC20087EC43 /* MainWorker.swift */,
-				FDBB75B228C0BFC20087EC43 /* MainRouter.swift */,
-				FDBB75B328C0BFC20087EC43 /* MainModels.swift */,
-				FDBB75B428C0BFC20087EC43 /* MainViewController.swift */,
-				FDBB75B528C0BFC20087EC43 /* MainInteractor.swift */,
+				FDBB75E028C126870087EC43 /* MainViewController.swift */,
+				FDBB75E128C126870087EC43 /* MainInteractor.swift */,
+				FDBB75E228C126870087EC43 /* MainPresenter.swift */,
+				FDBB75E328C126870087EC43 /* MainRouter.swift */,
+				FDBB75E428C126870087EC43 /* MainWorker.swift */,
+				FDBB75E528C126870087EC43 /* MainModels.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		FDBB75AD28C07FD40087EC43 /* Workers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Workers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +210,6 @@
 			packageProductDependencies = (
 				FDBB755D28BFD2E10087EC43 /* SnapKit */,
 				FDBB756028BFD2EE0087EC43 /* Then */,
-				FDBB756328BFD2FC0087EC43 /* Alamofire */,
 			);
 			productName = BookFinderApp;
 			productReference = FDBB752828BFCFD50087EC43 /* BookFinderApp.app */;
@@ -288,7 +286,6 @@
 			packageReferences = (
 				FDBB755C28BFD2E10087EC43 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				FDBB755F28BFD2EE0087EC43 /* XCRemoteSwiftPackageReference "Then" */,
-				FDBB756228BFD2FC0087EC43 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = FDBB752928BFCFD50087EC43 /* Products */;
 			projectDirPath = "";
@@ -334,14 +331,17 @@
 			files = (
 				FDBB758828C079DA0087EC43 /* GoogleBookData.swift in Sources */,
 				FDBB752C28BFCFD50087EC43 /* AppDelegate.swift in Sources */,
-				FDBB75B828C0BFC20087EC43 /* MainRouter.swift in Sources */,
+				FDBB75CB28C0D7E90087EC43 /* SearchAPIProvider.swift in Sources */,
+				FDBB75CD28C0D83A0087EC43 /* HTTPMethod.swift in Sources */,
 				FDBB752E28BFCFD50087EC43 /* SceneDelegate.swift in Sources */,
-				FDBB75BA28C0BFC20087EC43 /* MainViewController.swift in Sources */,
-				FDBB75B628C0BFC20087EC43 /* MainPresenter.swift in Sources */,
-				FDBB75B728C0BFC20087EC43 /* MainWorker.swift in Sources */,
-				FDBB75B928C0BFC20087EC43 /* MainModels.swift in Sources */,
-				FDBB756728BFD4160087EC43 /* GoogleBookRequestManager.swift in Sources */,
-				FDBB75BB28C0BFC20087EC43 /* MainInteractor.swift in Sources */,
+				FDBB75E828C126870087EC43 /* MainPresenter.swift in Sources */,
+				FDBB75E728C126870087EC43 /* MainInteractor.swift in Sources */,
+				FDBB756728BFD4160087EC43 /* SearchAPI.swift in Sources */,
+				FDBB75DE28C124080087EC43 /* APIError.swift in Sources */,
+				FDBB75E928C126870087EC43 /* MainRouter.swift in Sources */,
+				FDBB75EA28C126870087EC43 /* MainWorker.swift in Sources */,
+				FDBB75EB28C126870087EC43 /* MainModels.swift in Sources */,
+				FDBB75E628C126870087EC43 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,14 +685,6 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		FDBB756228BFD2FC0087EC43 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -705,11 +697,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FDBB755F28BFD2EE0087EC43 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
-		};
-		FDBB756328BFD2FC0087EC43 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FDBB756228BFD2FC0087EC43 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

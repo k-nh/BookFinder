@@ -12,8 +12,9 @@
 
 import UIKit
 
-protocol MainDisplayLogic: class {
+protocol MainDisplayLogic: AnyObject {
     func displayBookData(viewModel: Main.BookData.ViewModelSuccess)
+    func displayError(viewModel: Main.BookData.ViewModelFailure)
 }
 
 class MainViewController: UITableViewController, MainDisplayLogic {
@@ -81,19 +82,22 @@ class MainViewController: UITableViewController, MainDisplayLogic {
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
     
+    var displayedBooks: [DisplayedBookData] = []
+    
     // MARK: Do something
     func displayBookData(viewModel: Main.BookData.ViewModelSuccess) {
+        displayedBooks = viewModel.displayedBooks
         tableView.reloadData()
     }
     
-    func displayErrorAlert(viewModel: Main.BookData.ViewModelFailure) {
+    func displayError(viewModel: Main.BookData.ViewModelFailure) {
+        print(viewModel.errorMessage)
     }
 }
 
 extension MainViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let request = Main.BookData.Request(keyword: searchBar.text)
-        interactor?.doSomething(request: request)
+        interactor?.fetchBookData(request: request)
     }
-    
 }
