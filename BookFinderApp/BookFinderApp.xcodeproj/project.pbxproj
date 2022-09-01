@@ -16,7 +16,6 @@
 		FDBB754F28BFCFD60087EC43 /* BookFinderAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB754E28BFCFD60087EC43 /* BookFinderAppUITestsLaunchTests.swift */; };
 		FDBB755E28BFD2E10087EC43 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FDBB755D28BFD2E10087EC43 /* SnapKit */; };
 		FDBB756128BFD2EE0087EC43 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = FDBB756028BFD2EE0087EC43 /* Then */; };
-		FDBB756428BFD2FC0087EC43 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FDBB756328BFD2FC0087EC43 /* Alamofire */; };
 		FDBB756728BFD4160087EC43 /* GoogleBookRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB756628BFD4160087EC43 /* GoogleBookRequestManager.swift */; };
 		FDBB758828C079DA0087EC43 /* GoogleBookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB758728C079DA0087EC43 /* GoogleBookData.swift */; };
 		FDBB75B628C0BFC20087EC43 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75B028C0BFC20087EC43 /* MainPresenter.swift */; };
@@ -71,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDBB756428BFD2FC0087EC43 /* Alamofire in Frameworks */,
 				FDBB755E28BFD2E10087EC43 /* SnapKit in Frameworks */,
 				FDBB756128BFD2EE0087EC43 /* Then in Frameworks */,
 			);
@@ -211,7 +209,6 @@
 			packageProductDependencies = (
 				FDBB755D28BFD2E10087EC43 /* SnapKit */,
 				FDBB756028BFD2EE0087EC43 /* Then */,
-				FDBB756328BFD2FC0087EC43 /* Alamofire */,
 			);
 			productName = BookFinderApp;
 			productReference = FDBB752828BFCFD50087EC43 /* BookFinderApp.app */;
@@ -288,7 +285,6 @@
 			packageReferences = (
 				FDBB755C28BFD2E10087EC43 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				FDBB755F28BFD2EE0087EC43 /* XCRemoteSwiftPackageReference "Then" */,
-				FDBB756228BFD2FC0087EC43 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = FDBB752928BFCFD50087EC43 /* Products */;
 			projectDirPath = "";
@@ -685,14 +681,6 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		FDBB756228BFD2FC0087EC43 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -705,11 +693,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FDBB755F28BFD2EE0087EC43 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
-		};
-		FDBB756328BFD2FC0087EC43 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FDBB756228BFD2FC0087EC43 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
