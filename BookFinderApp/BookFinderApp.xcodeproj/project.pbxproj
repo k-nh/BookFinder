@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FDBB752C28BFCFD50087EC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB752B28BFCFD50087EC43 /* AppDelegate.swift */; };
 		FDBB752E28BFCFD50087EC43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB752D28BFCFD50087EC43 /* SceneDelegate.swift */; };
-		FDBB753028BFCFD50087EC43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB752F28BFCFD50087EC43 /* ViewController.swift */; };
 		FDBB753528BFCFD60087EC43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDBB753428BFCFD60087EC43 /* Assets.xcassets */; };
 		FDBB753828BFCFD60087EC43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDBB753628BFCFD60087EC43 /* LaunchScreen.storyboard */; };
 		FDBB754328BFCFD60087EC43 /* BookFinderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB754228BFCFD60087EC43 /* BookFinderAppTests.swift */; };
@@ -20,6 +19,12 @@
 		FDBB756428BFD2FC0087EC43 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FDBB756328BFD2FC0087EC43 /* Alamofire */; };
 		FDBB756728BFD4160087EC43 /* GoogleBookRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB756628BFD4160087EC43 /* GoogleBookRequestManager.swift */; };
 		FDBB758828C079DA0087EC43 /* GoogleBookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB758728C079DA0087EC43 /* GoogleBookData.swift */; };
+		FDBB75B628C0BFC20087EC43 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75B028C0BFC20087EC43 /* MainPresenter.swift */; };
+		FDBB75B728C0BFC20087EC43 /* MainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75B128C0BFC20087EC43 /* MainWorker.swift */; };
+		FDBB75B828C0BFC20087EC43 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75B228C0BFC20087EC43 /* MainRouter.swift */; };
+		FDBB75B928C0BFC20087EC43 /* MainModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75B328C0BFC20087EC43 /* MainModels.swift */; };
+		FDBB75BA28C0BFC20087EC43 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75B428C0BFC20087EC43 /* MainViewController.swift */; };
+		FDBB75BB28C0BFC20087EC43 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75B528C0BFC20087EC43 /* MainInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +48,6 @@
 		FDBB752828BFCFD50087EC43 /* BookFinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookFinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDBB752B28BFCFD50087EC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDBB752D28BFCFD50087EC43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FDBB752F28BFCFD50087EC43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FDBB753428BFCFD60087EC43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDBB753728BFCFD60087EC43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FDBB753928BFCFD60087EC43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +58,12 @@
 		FDBB754E28BFCFD60087EC43 /* BookFinderAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFinderAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FDBB756628BFD4160087EC43 /* GoogleBookRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookRequestManager.swift; sourceTree = "<group>"; };
 		FDBB758728C079DA0087EC43 /* GoogleBookData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleBookData.swift; sourceTree = "<group>"; };
+		FDBB75B028C0BFC20087EC43 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		FDBB75B128C0BFC20087EC43 /* MainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorker.swift; sourceTree = "<group>"; };
+		FDBB75B228C0BFC20087EC43 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		FDBB75B328C0BFC20087EC43 /* MainModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModels.swift; sourceTree = "<group>"; };
+		FDBB75B428C0BFC20087EC43 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FDBB75B528C0BFC20087EC43 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,10 +119,10 @@
 			children = (
 				FDBB752B28BFCFD50087EC43 /* AppDelegate.swift */,
 				FDBB752D28BFCFD50087EC43 /* SceneDelegate.swift */,
-				FDBB752F28BFCFD50087EC43 /* ViewController.swift */,
 				FDBB756828BFD4440087EC43 /* Models */,
 				FDBB756528BFD39D0087EC43 /* Services */,
 				FDBB75AD28C07FD40087EC43 /* Workers */,
+				FDBB758A28C079ED0087EC43 /* Scenes */,
 				FDBB753428BFCFD60087EC43 /* Assets.xcassets */,
 				FDBB753628BFCFD60087EC43 /* LaunchScreen.storyboard */,
 				FDBB753928BFCFD60087EC43 /* Info.plist */,
@@ -151,6 +161,28 @@
 				FDBB758728C079DA0087EC43 /* GoogleBookData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FDBB758A28C079ED0087EC43 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				FDBB758B28C079ED0087EC43 /* Main */,
+			);
+			name = Scenes;
+			path = BookFinderApp/Scenes;
+			sourceTree = SOURCE_ROOT;
+		};
+		FDBB758B28C079ED0087EC43 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FDBB75B028C0BFC20087EC43 /* MainPresenter.swift */,
+				FDBB75B128C0BFC20087EC43 /* MainWorker.swift */,
+				FDBB75B228C0BFC20087EC43 /* MainRouter.swift */,
+				FDBB75B328C0BFC20087EC43 /* MainModels.swift */,
+				FDBB75B428C0BFC20087EC43 /* MainViewController.swift */,
+				FDBB75B528C0BFC20087EC43 /* MainInteractor.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		FDBB75AD28C07FD40087EC43 /* Workers */ = {
@@ -300,11 +332,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDBB753028BFCFD50087EC43 /* ViewController.swift in Sources */,
 				FDBB758828C079DA0087EC43 /* GoogleBookData.swift in Sources */,
 				FDBB752C28BFCFD50087EC43 /* AppDelegate.swift in Sources */,
+				FDBB75B828C0BFC20087EC43 /* MainRouter.swift in Sources */,
 				FDBB752E28BFCFD50087EC43 /* SceneDelegate.swift in Sources */,
+				FDBB75BA28C0BFC20087EC43 /* MainViewController.swift in Sources */,
+				FDBB75B628C0BFC20087EC43 /* MainPresenter.swift in Sources */,
+				FDBB75B728C0BFC20087EC43 /* MainWorker.swift in Sources */,
+				FDBB75B928C0BFC20087EC43 /* MainModels.swift in Sources */,
 				FDBB756728BFD4160087EC43 /* GoogleBookRequestManager.swift in Sources */,
+				FDBB75BB28C0BFC20087EC43 /* MainInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
