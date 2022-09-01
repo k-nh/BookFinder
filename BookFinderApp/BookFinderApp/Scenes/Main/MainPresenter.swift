@@ -13,16 +13,24 @@
 import UIKit
 
 protocol MainPresentationLogic {
-  func presentSomething(response: Main.BookData.Response)
+    func presentData(response: GoogleBookData)
+    func presentError(errorMessage: String)
 }
 
 class MainPresenter: MainPresentationLogic {
-  weak var viewController: MainDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: Main.BookData.Response) {
-    let viewModel = Main.BookData.ViewModelSuccess(displayedBooks: [])
-    viewController?.displayBookData(viewModel: viewModel)
-  }
+    
+    weak var viewController: MainDisplayLogic?
+    
+    // MARK: Do something
+    
+    func presentData(response: GoogleBookData) {
+        let viewModel = Main.BookData.ViewModelSuccess(displayedBooks: [])
+        viewController?.displayBookData(viewModel: viewModel)
+    }
+    
+    func presentError(errorMessage: String) {
+        let viewModel = Main.BookData.ViewModelFailure(errorMessage: errorMessage)
+        viewController?.displayError(viewModel: viewModel)
+    }
+    
 }

@@ -13,26 +13,35 @@
 import UIKit
 
 protocol MainBusinessLogic {
-  func doSomething(request: Main.BookData.Request)
+    func fetchBookData(request: Main.BookData.Request)
 }
 
 protocol MainDataStore {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
-class MainInteractor: MainBusinessLogic, MainDataStore {
-  var presenter: MainPresentationLogic?
-  var worker: MainWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Main.BookData.Request) {
-    print(request)
-    worker = MainWorker()
-    worker?.doSomeWork()
-    
-    let response = Main.BookData.Response(books: [])
-    presenter?.presentSomething(response: response)
-  }
+final class MainInteractor {
+    var presenter: MainPresentationLogic?
+    var worker: MainSceneSearchLogic?
 }
+
+extension MainInteractor: MainBusinessLogic, MainDataStore {
+    // MARK: Do something
+    func fetchBookData(request: Main.BookData.Request) {
+        let service = SearchAPIProvider()
+        worker = MainWorker(service: service)
+        worker?.fetchBookData(keyword: request.keyword ?? "", completion: { result in
+            DispatchQueue.main.async { [weak self] in
+                switch result {
+                case .success(let data):
+                    print(data)
+                    self?.presenter?.presentData(response: data)
+                case .failure(let error):
+                    print(error)
+                    self?.presenter?.presentError(errorMessage: error.localizedDescription)
+                }
+            }
+        })
+    }
+}
+

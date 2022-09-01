@@ -18,7 +18,7 @@ enum Main {
             let keyword: String?
         }
         struct Response {
-            let books: [GoogleBookData]
+            let books: GoogleBookData
         }
         
         struct ViewModelSuccess {

@@ -12,7 +12,26 @@
 
 import UIKit
 
-class MainWorker {
-  func doSomeWork() {
-  }
+protocol MainSceneSearchLogic {
+    func fetchBookData(keyword: String, completion: @escaping (Result<GoogleBookData, Error>) -> Void)
+}
+
+final class MainWorker: MainSceneSearchLogic {
+    private let service: SearchSearvice
+    
+    init(service: SearchSearvice) {
+        self.service = service
+    }
+    
+    func fetchBookData(keyword: String, completion: @escaping (Result<GoogleBookData, Error>) -> Void) {
+        service.search(keyword: keyword) { result in
+            switch result {
+            case .success(let data):
+                completion(.success(data))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+            
+        }
+    }
 }
