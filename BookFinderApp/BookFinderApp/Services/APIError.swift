@@ -12,4 +12,17 @@ enum APIError: LocalizedError {
     case noDataError
     case decodeError
     case unknownError
+    
+    func toErrorMessage() -> String {
+        switch self {
+        case .errorDescription:
+            return "네트워크 관련 오류가 발생했습니다. 잠시 후 다시 시도해주세요."
+        case .noDataError:
+            return "해당 데이터가 존재하지 않습니다."
+        case .decodeError:
+            return "네트워크 관련 오류가 발생했습니다."
+        case .unknownError:
+            return "오류가 발생했습니다. 잠시 후 다시 시도해주세요."
+        }
+    }
 }

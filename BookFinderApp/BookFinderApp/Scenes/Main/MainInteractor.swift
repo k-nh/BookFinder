@@ -36,7 +36,7 @@ extension MainInteractor: MainBusinessLogic, MainDataStore {
                 case .success(let data):
                     self?.presenter?.presentData(response: data)
                 case .failure(let error):
-                    self?.presenter?.presentError(errorMessage: error.localizedDescription)
+                    self?.presenter?.presentError(errorMessage: error.toErrorMessage())
                 }
             }
         })

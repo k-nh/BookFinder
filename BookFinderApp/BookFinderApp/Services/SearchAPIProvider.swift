@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SearchSearvice {
-    func search(keyword: String, startIndex: Int, completion: @escaping (Result<GoogleBookData, Error>) -> Void)
+    func search(keyword: String, startIndex: Int, completion: @escaping (Result<GoogleBookData, APIError>) -> Void)
 }
 
 class SearchAPIProvider: SearchSearvice {
@@ -18,7 +18,7 @@ class SearchAPIProvider: SearchSearvice {
         self.session = session
     }
     
-    func search(keyword: String, startIndex: Int, completion: @escaping (Result<GoogleBookData, Error>) -> Void) {
+    func search(keyword: String, startIndex: Int, completion: @escaping (Result<GoogleBookData, APIError>) -> Void) {
         
         guard let request = try? SearchAPI.search(keyword, startIndex).asURLRequest() else {
             return

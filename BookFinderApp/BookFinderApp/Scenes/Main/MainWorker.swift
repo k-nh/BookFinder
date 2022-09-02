@@ -13,7 +13,7 @@
 import UIKit
 
 protocol MainSceneSearchLogic {
-    func fetchBookData(request: Main.BookData.Request, completion: @escaping (Result<GoogleBookData, Error>) -> Void)
+    func fetchBookData(request: Main.BookData.Request, completion: @escaping (Result<GoogleBookData, APIError>) -> Void)
 }
 
 final class MainWorker: MainSceneSearchLogic {
@@ -23,7 +23,7 @@ final class MainWorker: MainSceneSearchLogic {
         self.service = service
     }
     
-    func fetchBookData(request: Main.BookData.Request, completion: @escaping (Result<GoogleBookData, Error>) -> Void) {
+    func fetchBookData(request: Main.BookData.Request, completion: @escaping (Result<GoogleBookData, APIError>) -> Void) {
         service.search(keyword: request.keyword, startIndex: request.startIndex) { result in
             switch result {
             case .success(let data):
@@ -31,7 +31,6 @@ final class MainWorker: MainSceneSearchLogic {
             case .failure(let error):
                 completion(.failure(error))
             }
-            
         }
     }
 }

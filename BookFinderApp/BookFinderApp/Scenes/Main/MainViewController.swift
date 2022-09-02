@@ -22,6 +22,7 @@ class MainViewController: UITableViewController, MainDisplayLogic {
     var interactor: MainBusinessLogic?
     var router: (NSObjectProtocol & MainRoutingLogic & MainDataPassing)?
     
+    // MARK: UIComponents
     private lazy var searchController = UISearchController().then {
         $0.searchBar.placeholder = "검색어를 입력해주세요."
         $0.searchBar.delegate = self
@@ -87,30 +88,11 @@ class MainViewController: UITableViewController, MainDisplayLogic {
     }
     
     func displayError(viewModel: Main.BookData.ViewModelFailure) {
-        print(viewModel.errorMessage)
-    }
+        let alertController = UIAlertController(title: "오류", message: viewModel.errorMessage, preferredStyle: .alert)
     
-    private func configureUI() {
-        view.backgroundColor = .systemBackground
-        tableView.register(BookTableViewCell.self, forCellReuseIdentifier: BookTableViewCell.identifier)
-        self.navigationItem.searchController = searchController
-        self.navigationItem.title = "책 검색"
-        self.navigationItem.hidesSearchBarWhenScrolling = false
-    }
-
-    private func startPaging() {
-        isPaging = true
-        tableView.tableFooterView = loadingFooterView
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.fetchBookData()
-        }
-    }
-    
-    private func fetchBookData() {
-        if let keyword = searchController.searchBar.text {
-            let request = Main.BookData.Request(keyword: keyword, startIndex: self.displayedBooks.count)
-            interactor?.fetchBookData(request: request)
-        }
+        let confirmAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alertController.addAction(confirmAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -170,4 +152,28 @@ extension MainViewController: UISearchBarDelegate {
     }
 }
 
-
+// MARK: Private
+private extension MainViewController {
+    func configureUI() {
+        view.backgroundColor = .systemBackground
+        tableView.register(BookTableViewCell.self, forCellReuseIdentifier: BookTableViewCell.identifier)
+        self.navigationItem.searchController = searchController
+        self.navigationItem.title = "책 검색"
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    
+    func startPaging() {
+        isPaging = true
+        tableView.tableFooterView = loadingFooterView
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.fetchBookData()
+        }
+    }
+    
+    func fetchBookData() {
+        if let keyword = searchController.searchBar.text {
+            let request = Main.BookData.Request(keyword: keyword, startIndex: self.displayedBooks.count)
+            interactor?.fetchBookData(request: request)
+        }
+    }
+}
