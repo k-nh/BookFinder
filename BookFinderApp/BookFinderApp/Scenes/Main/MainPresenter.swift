@@ -24,7 +24,7 @@ class MainPresenter: MainPresentationLogic {
     // MARK: Do something
     
     func presentData(response: GoogleBookData) {
-        let viewModel = Main.BookData.ViewModelSuccess(displayedBooks: [])
+        let viewModel = Main.BookData.ViewModelSuccess(displayedBooks: response.toDomain())
         viewController?.displayBookData(viewModel: viewModel)
     }
     

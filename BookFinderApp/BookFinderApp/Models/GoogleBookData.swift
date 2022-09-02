@@ -12,6 +12,14 @@ struct GoogleBookData: Codable {
     let kind: String?
     let totalItems: Int?
     let items: [Item]?
+    
+    func toDomain() -> DisplayedBookData {
+        return DisplayedBookData(
+            totalItemCount: totalItems ?? 0,
+            books: items?.map { item in
+                item.toDomain()
+            })
+    }
 }
 
 // MARK: - Item
@@ -22,6 +30,46 @@ struct Item: Codable {
     let saleInfo: SaleInfo?
     let accessInfo: AccessInfo?
     let searchInfo: SearchInfo?
+    
+    func toDomain() -> Book {
+        return Book(
+            title: volumeInfo?.title ?? "",
+            authors: volumeInfo?.authors ?? [],
+            description: volumeInfo?.volumeInfoDescription ?? "",
+            thumbnailURL: volumeInfo?.imageLinks?.thumbnail ?? "",
+            infoLink: volumeInfo?.infoLink ?? ""
+        )
+    }
+}
+
+// MARK: - VolumeInfo
+struct VolumeInfo: Codable {
+    let title: String?
+    let authors: [String]?
+    let publisher, volumeInfoDescription: String?
+    let industryIdentifiers: [IndustryIdentifier]?
+    let readingModes: ReadingModes?
+    let pageCount: Int?
+    let printType: String?
+    let categories: [String]?
+    let maturityRating: String?
+    let allowAnonLogging: Bool?
+    let contentVersion: String?
+    let panelizationSummary: PanelizationSummary?
+    let comicsContent: Bool?
+    let imageLinks: ImageLinks?
+    let language: String?
+    let previewLink: String?
+    let infoLink: String?
+    let canonicalVolumeLink: String?
+    let seriesInfo: SeriesInfo?
+    let publishedDate: String?
+
+    enum CodingKeys: String, CodingKey {
+        case title, authors, publisher
+        case volumeInfoDescription = "description"
+        case industryIdentifiers, readingModes, pageCount, printType, categories, maturityRating, allowAnonLogging, contentVersion, panelizationSummary, comicsContent, imageLinks, language, previewLink, infoLink, canonicalVolumeLink, seriesInfo, publishedDate
+    }
 }
 
 // MARK: - AccessInfo
@@ -77,36 +125,6 @@ struct OfferListPrice: Codable {
 // MARK: - SearchInfo
 struct SearchInfo: Codable {
     let textSnippet: String?
-}
-
-// MARK: - VolumeInfo
-struct VolumeInfo: Codable {
-    let title: String?
-    let authors: [String]?
-    let publisher, volumeInfoDescription: String?
-    let industryIdentifiers: [IndustryIdentifier]?
-    let readingModes: ReadingModes?
-    let pageCount: Int?
-    let printType: String?
-    let categories: [String]?
-    let maturityRating: String?
-    let allowAnonLogging: Bool?
-    let contentVersion: String?
-    let panelizationSummary: PanelizationSummary?
-    let comicsContent: Bool?
-    let imageLinks: ImageLinks?
-    let language: String?
-    let previewLink: String?
-    let infoLink: String?
-    let canonicalVolumeLink: String?
-    let seriesInfo: SeriesInfo?
-    let publishedDate: String?
-
-    enum CodingKeys: String, CodingKey {
-        case title, authors, publisher
-        case volumeInfoDescription = "description"
-        case industryIdentifiers, readingModes, pageCount, printType, categories, maturityRating, allowAnonLogging, contentVersion, panelizationSummary, comicsContent, imageLinks, language, previewLink, infoLink, canonicalVolumeLink, seriesInfo, publishedDate
-    }
 }
 
 // MARK: - ImageLinks

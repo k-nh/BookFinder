@@ -22,7 +22,7 @@ enum Main {
         }
         
         struct ViewModelSuccess {
-            let displayedBooks: [DisplayedBookData]
+            let displayedBooks: DisplayedBookData
         }
         
         struct ViewModelFailure {
@@ -32,5 +32,14 @@ enum Main {
 }
 
 struct DisplayedBookData {
-    
+    let totalItemCount: Int
+    let books: [Book]?
+}
+
+struct Book {
+    let title: String
+    let authors: [String]
+    let description: String
+    let thumbnailURL: String
+    let infoLink: String
 }

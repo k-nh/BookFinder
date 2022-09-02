@@ -82,7 +82,7 @@ class MainViewController: UITableViewController, MainDisplayLogic {
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
     
-    var displayedBooks: [DisplayedBookData] = []
+    var displayedBooks: DisplayedBookData?
     
     // MARK: Do something
     func displayBookData(viewModel: Main.BookData.ViewModelSuccess) {
