@@ -10,6 +10,7 @@
 //  see http://clean-swift.com
 //
 
+import SafariServices
 import UIKit
 
 protocol MainDisplayLogic: AnyObject {
@@ -125,11 +126,10 @@ class MainViewController: UITableViewController, MainDisplayLogic {
         
         let displayedBook = book[indexPath.row]
         if let url = URL(string: displayedBook.infoLink) {
-            UIApplication.shared.open(url, options: [:])
+            let safariViewController = SFSafariViewController(url: url)
+            self.present(safariViewController, animated: true, completion: nil)
         }
     }
-    
-    
 }
 
 extension MainViewController: UISearchBarDelegate {
