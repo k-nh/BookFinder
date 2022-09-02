@@ -30,6 +30,7 @@
 		FDBB75EE28C12C620087EC43 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75ED28C12C620087EC43 /* BookTableViewCell.swift */; };
 		FDBB75F128C12C6A0087EC43 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75F028C12C6A0087EC43 /* NSObject+.swift */; };
 		FDBB75F528C1CAEC0087EC43 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75F428C1CAEC0087EC43 /* UIImageView+.swift */; };
+		FDBB75F728C28F940087EC43 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75F628C28F940087EC43 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		FDBB75ED28C12C620087EC43 /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		FDBB75F028C12C6A0087EC43 /* NSObject+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		FDBB75F428C1CAEC0087EC43 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		FDBB75F628C28F940087EC43 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				FDBB75ED28C12C620087EC43 /* BookTableViewCell.swift */,
+				FDBB75F628C28F940087EC43 /* LoadingView.swift */,
 			);
 			path = SubComponents;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				FDBB756728BFD4160087EC43 /* SearchAPI.swift in Sources */,
 				FDBB75DE28C124080087EC43 /* APIError.swift in Sources */,
 				FDBB75E928C126870087EC43 /* MainRouter.swift in Sources */,
+				FDBB75F728C28F940087EC43 /* LoadingView.swift in Sources */,
 				FDBB75F128C12C6A0087EC43 /* NSObject+.swift in Sources */,
 				FDBB75EE28C12C620087EC43 /* BookTableViewCell.swift in Sources */,
 				FDBB75EA28C126870087EC43 /* MainWorker.swift in Sources */,
@@ -539,6 +543,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SQ5T25W9V5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookFinderApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -565,6 +570,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SQ5T25W9V5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookFinderApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

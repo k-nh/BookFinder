@@ -30,7 +30,7 @@ extension MainInteractor: MainBusinessLogic, MainDataStore {
     func fetchBookData(request: Main.BookData.Request) {
         let service = SearchAPIProvider()
         worker = MainWorker(service: service)
-        worker?.fetchBookData(keyword: request.keyword ?? "", completion: { result in
+        worker?.fetchBookData(request: request, completion: { result in
             DispatchQueue.main.async { [weak self] in
                 switch result {
                 case .success(let data):

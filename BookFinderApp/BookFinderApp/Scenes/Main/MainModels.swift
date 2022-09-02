@@ -15,7 +15,8 @@ import UIKit
 enum Main {
     enum BookData {
         struct Request {
-            let keyword: String?
+            let keyword: String
+            let startIndex: Int
         }
         struct Response {
             let books: GoogleBookData

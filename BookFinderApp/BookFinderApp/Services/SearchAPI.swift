@@ -8,7 +8,7 @@
 import Foundation
 
 enum SearchAPI {
-    case search(String)
+    case search(String, Int)
     
     private static let baseURL = "https://www.googleapis.com/books/v1"
     
@@ -32,8 +32,8 @@ enum SearchAPI {
     
     var query: [URLQueryItem] {
         switch self {
-        case .search(let query):
-            return [URLQueryItem(name: "q", value: query)]
+        case .search(let query, let startIndex):
+            return [URLQueryItem(name: "q", value: query), URLQueryItem(name: "startIndex", value: String(startIndex))]
         }
     }
     

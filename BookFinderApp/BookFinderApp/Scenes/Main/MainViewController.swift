@@ -27,6 +27,10 @@ class MainViewController: UITableViewController, MainDisplayLogic {
         $0.searchBar.delegate = self
     }
     
+    private lazy var loadingFooterView = LoadingView().then {
+        $0.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 100)
+    }
+    
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -39,7 +43,6 @@ class MainViewController: UITableViewController, MainDisplayLogic {
     }
     
     // MARK: Setup
-    
     private func setupVIP() {
         let viewController = self
         let interactor = MainInteractor()
@@ -53,24 +56,39 @@ class MainViewController: UITableViewController, MainDisplayLogic {
         router.dataStore = interactor
     }
     
-    // MARK: Routing
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
-    
     // MARK: View lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
     }
     
+    var totalItemCount: Int?
+    var displayedBooks: [Book] = []
+    var isPaging: Bool = false
+    var hasNextPage: Bool = false
+    
+    // MARK: Do something
+    func displayBookData(viewModel: Main.BookData.ViewModelSuccess) {
+        tableView.tableFooterView = nil
+
+        if totalItemCount == nil {
+            totalItemCount = viewModel.displayedBooks.totalItemCount
+        }
+        
+        guard let newData = viewModel.displayedBooks.books else { return }
+        self.displayedBooks.append(contentsOf: newData)
+
+        let currentDataCount = self.displayedBooks.count
+        let totalCount = self.totalItemCount ?? 0
+        self.hasNextPage =  currentDataCount >= totalCount - 10 ? false : true
+        self.isPaging = false
+        
+        self.tableView.reloadData()
+    }
+    
+    func displayError(viewModel: Main.BookData.ViewModelFailure) {
+        print(viewModel.errorMessage)
+    }
     
     private func configureUI() {
         view.backgroundColor = .systemBackground
@@ -79,32 +97,35 @@ class MainViewController: UITableViewController, MainDisplayLogic {
         self.navigationItem.title = "책 검색"
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
-    
-    var displayedBooks: DisplayedBookData?
-    
-    // MARK: Do something
-    func displayBookData(viewModel: Main.BookData.ViewModelSuccess) {
-        displayedBooks = viewModel.displayedBooks
-        tableView.reloadData()
+
+    private func startPaging() {
+        isPaging = true
+        tableView.tableFooterView = loadingFooterView
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.fetchBookData()
+        }
     }
     
-    func displayError(viewModel: Main.BookData.ViewModelFailure) {
-        print(viewModel.errorMessage)
+    private func fetchBookData() {
+        if let keyword = searchController.searchBar.text {
+            let request = Main.BookData.Request(keyword: keyword, startIndex: self.displayedBooks.count)
+            interactor?.fetchBookData(request: request)
+        }
     }
-    
+}
+
+// MARK: TableView
+extension MainViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        displayedBooks?.books?.count ?? 0
+        return displayedBooks.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
+        return 100
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let data = displayedBooks,
-              let book = data.books else { return UITableViewCell() }
-        
-        let displayedBook = book[indexPath.row]
+        let displayedBook = displayedBooks[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BookTableViewCell.identifier, for: indexPath) as? BookTableViewCell else {
             return UITableViewCell()
         }
@@ -114,29 +135,39 @@ class MainViewController: UITableViewController, MainDisplayLogic {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if let count = displayedBooks?.totalItemCount {
+        if let count = totalItemCount {
             return "결과 \(count)개"
         }
         return nil
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let data = displayedBooks,
-              let book = data.books else { return }
-        
-        let displayedBook = book[indexPath.row]
+        let displayedBook = displayedBooks[indexPath.row]
         if let url = URL(string: displayedBook.infoLink) {
             let safariViewController = SFSafariViewController(url: url)
             self.present(safariViewController, animated: true, completion: nil)
         }
     }
-}
-
-extension MainViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let keyword = searchBar.text {
-            let request = Main.BookData.Request(keyword: keyword)
-            interactor?.fetchBookData(request: request)
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = tableView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.height
+        
+        if offsetY > (contentHeight - height) {
+            if hasNextPage && !isPaging {
+                startPaging()
+            }
         }
     }
 }
+
+// MARK: SearchBar
+extension MainViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        displayedBooks.removeAll()
+        fetchBookData()
+    }
+}
+
+
