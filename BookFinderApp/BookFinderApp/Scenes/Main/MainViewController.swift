@@ -21,16 +21,12 @@ class MainViewController: UITableViewController, MainDisplayLogic {
     var interactor: MainBusinessLogic?
     var router: (NSObjectProtocol & MainRoutingLogic & MainDataPassing)?
     
-    private lazy var searchController: UISearchController = {
-        let searchController = UISearchController()
-        searchController.searchBar.placeholder = "검색어를 입력해주세요."
-        searchController.searchBar.delegate = self
-        
-        return searchController
-    }()
+    private lazy var searchController = UISearchController().then {
+        $0.searchBar.placeholder = "검색어를 입력해주세요."
+        $0.searchBar.delegate = self
+    }
     
     // MARK: Object lifecycle
-    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setupVIP()
@@ -77,6 +73,7 @@ class MainViewController: UITableViewController, MainDisplayLogic {
     
     private func configureUI() {
         view.backgroundColor = .systemBackground
+        tableView.register(BookTableViewCell.self, forCellReuseIdentifier: BookTableViewCell.identifier)
         self.navigationItem.searchController = searchController
         self.navigationItem.title = "책 검색"
         self.navigationItem.hidesSearchBarWhenScrolling = false
@@ -93,11 +90,53 @@ class MainViewController: UITableViewController, MainDisplayLogic {
     func displayError(viewModel: Main.BookData.ViewModelFailure) {
         print(viewModel.errorMessage)
     }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        displayedBooks?.books?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let data = displayedBooks,
+              let book = data.books else { return UITableViewCell() }
+        
+        let displayedBook = book[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: BookTableViewCell.identifier, for: indexPath) as? BookTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configureData(displayedBook)
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if let count = displayedBooks?.totalItemCount {
+            return "결과 \(count)개"
+        }
+        return nil
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let data = displayedBooks,
+              let book = data.books else { return }
+        
+        let displayedBook = book[indexPath.row]
+        if let url = URL(string: displayedBook.infoLink) {
+            UIApplication.shared.open(url, options: [:])
+        }
+    }
+    
+    
 }
 
 extension MainViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let request = Main.BookData.Request(keyword: searchBar.text)
-        interactor?.fetchBookData(request: request)
+        if let keyword = searchBar.text {
+            let request = Main.BookData.Request(keyword: keyword)
+            interactor?.fetchBookData(request: request)
+        }
     }
 }

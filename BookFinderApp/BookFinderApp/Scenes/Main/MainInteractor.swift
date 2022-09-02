@@ -34,10 +34,8 @@ extension MainInteractor: MainBusinessLogic, MainDataStore {
             DispatchQueue.main.async { [weak self] in
                 switch result {
                 case .success(let data):
-                    print(data)
                     self?.presenter?.presentData(response: data)
                 case .failure(let error):
-                    print(error)
                     self?.presenter?.presentError(errorMessage: error.localizedDescription)
                 }
             }

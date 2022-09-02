@@ -27,6 +27,7 @@
 		FDBB75E928C126870087EC43 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75E328C126870087EC43 /* MainRouter.swift */; };
 		FDBB75EA28C126870087EC43 /* MainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75E428C126870087EC43 /* MainWorker.swift */; };
 		FDBB75EB28C126870087EC43 /* MainModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75E528C126870087EC43 /* MainModels.swift */; };
+		FDBB75EE28C12C620087EC43 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75ED28C12C620087EC43 /* BookTableViewCell.swift */; };
 		FDBB75F128C12C6A0087EC43 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75F028C12C6A0087EC43 /* NSObject+.swift */; };
 		FDBB75F528C1CAEC0087EC43 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75F428C1CAEC0087EC43 /* UIImageView+.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		FDBB75E328C126870087EC43 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		FDBB75E428C126870087EC43 /* MainWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWorker.swift; sourceTree = "<group>"; };
 		FDBB75E528C126870087EC43 /* MainModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModels.swift; sourceTree = "<group>"; };
+		FDBB75ED28C12C620087EC43 /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		FDBB75F028C12C6A0087EC43 /* NSObject+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		FDBB75F428C1CAEC0087EC43 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +188,7 @@
 		FDBB75DF28C126870087EC43 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FDBB75EC28C12C620087EC43 /* SubComponents */,
 				FDBB75E028C126870087EC43 /* MainViewController.swift */,
 				FDBB75E128C126870087EC43 /* MainInteractor.swift */,
 				FDBB75E228C126870087EC43 /* MainPresenter.swift */,
@@ -194,6 +197,14 @@
 				FDBB75E528C126870087EC43 /* MainModels.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		FDBB75EC28C12C620087EC43 /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FDBB75ED28C12C620087EC43 /* BookTableViewCell.swift */,
+			);
+			path = SubComponents;
 			sourceTree = "<group>";
 		};
 		FDBB75EF28C12C6A0087EC43 /* Extensions */ = {
@@ -356,6 +367,7 @@
 				FDBB75DE28C124080087EC43 /* APIError.swift in Sources */,
 				FDBB75E928C126870087EC43 /* MainRouter.swift in Sources */,
 				FDBB75F128C12C6A0087EC43 /* NSObject+.swift in Sources */,
+				FDBB75EE28C12C620087EC43 /* BookTableViewCell.swift in Sources */,
 				FDBB75EA28C126870087EC43 /* MainWorker.swift in Sources */,
 				FDBB75EB28C126870087EC43 /* MainModels.swift in Sources */,
 				FDBB75E628C126870087EC43 /* MainViewController.swift in Sources */,
