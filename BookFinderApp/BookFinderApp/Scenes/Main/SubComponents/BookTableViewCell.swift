@@ -24,6 +24,11 @@ final class BookTableViewCell: UITableViewCell {
         $0.textColor = .label
     }
     
+    private lazy var publishedDateLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 12)
+        $0.textColor = .tertiaryLabel
+    }
+    
     private lazy var authorLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 16)
         $0.textColor = .secondaryLabel
@@ -49,6 +54,7 @@ final class BookTableViewCell: UITableViewCell {
         [
             coverImageView,
             titleLabel,
+            publishedDateLabel,
             authorLabel,
             descriptionLabel
         ].forEach {
@@ -67,8 +73,14 @@ final class BookTableViewCell: UITableViewCell {
             $0.trailing.equalToSuperview().inset(12.0)
         }
         
+        publishedDateLabel.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(2.0)
+            $0.leading.equalTo(titleLabel.snp.leading)
+            $0.trailing.equalToSuperview().inset(12.0)
+        }
+        
         authorLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(5.0)
+            $0.top.equalTo(publishedDateLabel.snp.bottom).offset(5.0)
             $0.leading.equalTo(titleLabel.snp.leading)
             $0.trailing.equalToSuperview().inset(12.0)
         }
@@ -92,6 +104,7 @@ final class BookTableViewCell: UITableViewCell {
   
         coverImageView.loadWithURL(data.thumbnailURL)
         titleLabel.text = data.title
+        publishedDateLabel.text = data.publishedDate
         authorLabel.text = data.authors.first
         descriptionLabel.text = data.description
     }

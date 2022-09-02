@@ -42,4 +42,5 @@ struct Book {
     let description: String
     let thumbnailURL: String
     let infoLink: String
+    let publishedDate: String
 }

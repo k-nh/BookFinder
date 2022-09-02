@@ -37,7 +37,8 @@ struct Item: Codable {
             authors: volumeInfo?.authors ?? [],
             description: volumeInfo?.volumeInfoDescription ?? "",
             thumbnailURL: volumeInfo?.imageLinks?.thumbnail ?? "",
-            infoLink: volumeInfo?.infoLink ?? ""
+            infoLink: volumeInfo?.infoLink ?? "",
+            publishedDate: volumeInfo?.publishedDate ?? ""
         )
     }
 }
