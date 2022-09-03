@@ -24,17 +24,17 @@ final class BookTableViewCell: UITableViewCell {
         $0.textColor = .label
     }
     
-    private lazy var publishedDateLabel = UILabel().then {
+    lazy var publishedDateLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 12)
         $0.textColor = .tertiaryLabel
     }
     
-    private lazy var authorLabel = UILabel().then {
+    lazy var authorLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 16)
         $0.textColor = .secondaryLabel
     }
     
-    private lazy var descriptionLabel = UILabel().then {
+    lazy var descriptionLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 12)
         $0.textColor = .secondaryLabel
     }

@@ -37,9 +37,9 @@ class MainViewControllerTests: XCTestCase {
     func testNumberOfRowsInTableViewShouldBeEqualToDummyListCount() {
         // given
         let dummyList = [
-            Book(title: "1",
-                 authors: ["1"],
-                 description: "1",
+            Book(title: "타이틀",
+                 authors: ["저자"],
+                 description: "설명",
                  thumbnailURL: "http://books.google.com/books/content?id=DDv3ugAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
                  infoLink: "http://books.google.co.kr/books?id=DDv3ugAACAAJ&dq=%EA%B2%80%EC%83%89&hl=&source=gbs_api",
                  publishedDate: "2022")
@@ -58,9 +58,9 @@ class MainViewControllerTests: XCTestCase {
     func testShouldConfigureTableViewCells() {
         // given
         let dummyList = [
-            Book(title: "1",
-                 authors: ["1"],
-                 description: "1",
+            Book(title: "타이틀",
+                 authors: ["저자"],
+                 description: "설명",
                  thumbnailURL: "http://books.google.com/books/content?id=DDv3ugAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
                  infoLink: "http://books.google.co.kr/books?id=DDv3ugAACAAJ&dq=%EA%B2%80%EC%83%89&hl=&source=gbs_api",
                  publishedDate: "2022")
@@ -74,7 +74,10 @@ class MainViewControllerTests: XCTestCase {
         let cell = sut.tableView(sut.tableView, cellForRowAt: indexPath) as? BookTableViewCell
         
         // then
-        XCTAssertEqual(cell?.titleLabel.text, "1")
+        XCTAssertEqual(cell?.titleLabel.text, "타이틀")
+        XCTAssertEqual(cell?.authorLabel.text, "저자")
+        XCTAssertEqual(cell?.descriptionLabel.text, "설명")
+        XCTAssertEqual(cell?.publishedDateLabel.text, "2022")
     }
 
 }

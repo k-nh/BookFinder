@@ -24,7 +24,7 @@ class MainInteractorTests: XCTestCase {
         sut = MainInteractor()
     }
     
-    func testShouldCallWorker() throws {
+    func testShouldCallWorkerAndPresenter() throws {
         // given
         let mainWorkerSpy = MainWorkerSpy()
         sut.worker = mainWorkerSpy
@@ -35,9 +35,11 @@ class MainInteractorTests: XCTestCase {
         // when
         let request = Main.BookData.Request(keyword: "", startIndex: 0)
         sut.worker?.fetchBookData(request: request) { _ in }
+        sut.presenter?.presentData(response: Main.BookData.Response.init(books: GoogleBookData(kind: nil, totalItems: nil, items: nil)))
         
         // then
         XCTAssert(mainWorkerSpy.fetchBookDataCalled)
+        XCTAssert(mainPresentationLogicSpy.presentMovementCalled)
     }
 }
 
