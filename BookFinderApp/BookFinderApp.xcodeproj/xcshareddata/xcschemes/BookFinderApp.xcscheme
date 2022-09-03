@@ -20,6 +20,20 @@
                ReferencedContainer = "container:BookFinderApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FDBB753D28BFCFD60087EC43"
+               BuildableName = "BookFinderAppTests.xctest"
+               BlueprintName = "BookFinderAppTests"
+               ReferencedContainer = "container:BookFinderApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

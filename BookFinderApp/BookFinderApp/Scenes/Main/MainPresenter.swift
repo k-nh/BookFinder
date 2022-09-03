@@ -13,7 +13,7 @@
 import UIKit
 
 protocol MainPresentationLogic {
-    func presentData(response: GoogleBookData)
+    func presentData(response: Main.BookData.Response)
     func presentError(errorMessage: String)
 }
 
@@ -23,8 +23,8 @@ class MainPresenter: MainPresentationLogic {
     
     // MARK: Do something
     
-    func presentData(response: GoogleBookData) {
-        let viewModel = Main.BookData.ViewModelSuccess(displayedBooks: response.toDomain())
+    func presentData(response: Main.BookData.Response) {
+        let viewModel = Main.BookData.ViewModelSuccess(displayedBooks: response.books.toDomain())
         viewController?.displayBookData(viewModel: viewModel)
     }
     

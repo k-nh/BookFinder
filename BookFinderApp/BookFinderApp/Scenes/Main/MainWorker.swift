@@ -16,8 +16,8 @@ protocol MainSceneSearchLogic {
     func fetchBookData(request: Main.BookData.Request, completion: @escaping (Result<GoogleBookData, APIError>) -> Void)
 }
 
-final class MainWorker: MainSceneSearchLogic {
-    private let service: SearchSearvice
+class MainWorker: MainSceneSearchLogic {
+    var service: SearchSearvice
     
     init(service: SearchSearvice) {
         self.service = service

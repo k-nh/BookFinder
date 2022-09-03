@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD9728AE28C2E7FF002550D5 /* MainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9728AD28C2E7FF002550D5 /* MainInteractorTests.swift */; };
+		FD9728B028C2F0B6002550D5 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9728AF28C2F0B6002550D5 /* MainPresenterTests.swift */; };
+		FD9728BB28C31165002550D5 /* MainWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9728BA28C31165002550D5 /* MainWorkerSpy.swift */; };
 		FDBB752C28BFCFD50087EC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB752B28BFCFD50087EC43 /* AppDelegate.swift */; };
 		FDBB752E28BFCFD50087EC43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB752D28BFCFD50087EC43 /* SceneDelegate.swift */; };
 		FDBB753528BFCFD60087EC43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDBB753428BFCFD60087EC43 /* Assets.xcassets */; };
 		FDBB753828BFCFD60087EC43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDBB753628BFCFD60087EC43 /* LaunchScreen.storyboard */; };
-		FDBB754328BFCFD60087EC43 /* BookFinderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB754228BFCFD60087EC43 /* BookFinderAppTests.swift */; };
+		FDBB754328BFCFD60087EC43 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB754228BFCFD60087EC43 /* MainViewControllerTests.swift */; };
 		FDBB754D28BFCFD60087EC43 /* BookFinderAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB754C28BFCFD60087EC43 /* BookFinderAppUITests.swift */; };
 		FDBB754F28BFCFD60087EC43 /* BookFinderAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB754E28BFCFD60087EC43 /* BookFinderAppUITestsLaunchTests.swift */; };
 		FDBB755E28BFD2E10087EC43 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FDBB755D28BFD2E10087EC43 /* SnapKit */; };
@@ -50,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD9728AD28C2E7FF002550D5 /* MainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTests.swift; sourceTree = "<group>"; };
+		FD9728AF28C2F0B6002550D5 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
+		FD9728BA28C31165002550D5 /* MainWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorkerSpy.swift; sourceTree = "<group>"; };
 		FDBB752828BFCFD50087EC43 /* BookFinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookFinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDBB752B28BFCFD50087EC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDBB752D28BFCFD50087EC43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +63,7 @@
 		FDBB753728BFCFD60087EC43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FDBB753928BFCFD60087EC43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDBB753E28BFCFD60087EC43 /* BookFinderAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookFinderAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDBB754228BFCFD60087EC43 /* BookFinderAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFinderAppTests.swift; sourceTree = "<group>"; };
+		FDBB754228BFCFD60087EC43 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		FDBB754828BFCFD60087EC43 /* BookFinderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookFinderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDBB754C28BFCFD60087EC43 /* BookFinderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFinderAppUITests.swift; sourceTree = "<group>"; };
 		FDBB754E28BFCFD60087EC43 /* BookFinderAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFinderAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -104,11 +110,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD9728BC28C315E9002550D5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FDBB753628BFCFD60087EC43 /* LaunchScreen.storyboard */,
+				FDBB753428BFCFD60087EC43 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FD9728BF28C31700002550D5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FDBB75EF28C12C6A0087EC43 /* Extensions */,
+			);
+			name = Utils;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		FDBB751F28BFCFD50087EC43 = {
 			isa = PBXGroup;
 			children = (
 				FDBB752A28BFCFD50087EC43 /* BookFinderApp */,
-				FDBB75EF28C12C6A0087EC43 /* Extensions */,
 				FDBB754128BFCFD60087EC43 /* BookFinderAppTests */,
 				FDBB754B28BFCFD60087EC43 /* BookFinderAppUITests */,
 				FDBB752928BFCFD50087EC43 /* Products */,
@@ -133,8 +156,8 @@
 				FDBB756828BFD4440087EC43 /* Models */,
 				FDBB756528BFD39D0087EC43 /* Services */,
 				FDBB758A28C079ED0087EC43 /* Scenes */,
-				FDBB753428BFCFD60087EC43 /* Assets.xcassets */,
-				FDBB753628BFCFD60087EC43 /* LaunchScreen.storyboard */,
+				FD9728BF28C31700002550D5 /* Utils */,
+				FD9728BC28C315E9002550D5 /* Resources */,
 				FDBB753928BFCFD60087EC43 /* Info.plist */,
 			);
 			path = BookFinderApp;
@@ -143,7 +166,10 @@
 		FDBB754128BFCFD60087EC43 /* BookFinderAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				FDBB754228BFCFD60087EC43 /* BookFinderAppTests.swift */,
+				FDBB754228BFCFD60087EC43 /* MainViewControllerTests.swift */,
+				FD9728AD28C2E7FF002550D5 /* MainInteractorTests.swift */,
+				FD9728AF28C2F0B6002550D5 /* MainPresenterTests.swift */,
+				FD9728BA28C31165002550D5 /* MainWorkerSpy.swift */,
 			);
 			path = BookFinderAppTests;
 			sourceTree = "<group>";
@@ -213,8 +239,7 @@
 				FDBB75F028C12C6A0087EC43 /* NSObject+.swift */,
 				FDBB75F428C1CAEC0087EC43 /* UIImageView+.swift */,
 			);
-			name = Extensions;
-			path = BookFinderApp/Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,7 +403,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDBB754328BFCFD60087EC43 /* BookFinderAppTests.swift in Sources */,
+				FD9728B028C2F0B6002550D5 /* MainPresenterTests.swift in Sources */,
+				FD9728BB28C31165002550D5 /* MainWorkerSpy.swift in Sources */,
+				FDBB754328BFCFD60087EC43 /* MainViewControllerTests.swift in Sources */,
+				FD9728AE28C2E7FF002550D5 /* MainInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

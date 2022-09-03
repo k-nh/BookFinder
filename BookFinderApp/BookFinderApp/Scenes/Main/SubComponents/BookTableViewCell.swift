@@ -19,7 +19,7 @@ final class BookTableViewCell: UITableViewCell {
         $0.contentMode = .scaleAspectFit
     }
     
-    private lazy var titleLabel = UILabel().then {
+    lazy var titleLabel = UILabel().then {
         $0.font = .boldSystemFont(ofSize: 16)
         $0.textColor = .label
     }
