@@ -20,7 +20,6 @@ protocol MainDisplayLogic: AnyObject {
 
 class MainViewController: UITableViewController, MainDisplayLogic {
     var interactor: MainBusinessLogic?
-    var router: (NSObjectProtocol & MainRoutingLogic & MainDataPassing)?
     
     // MARK: UIComponents
     private lazy var searchController = UISearchController().then {
@@ -48,13 +47,9 @@ class MainViewController: UITableViewController, MainDisplayLogic {
         let viewController = self
         let interactor = MainInteractor()
         let presenter = MainPresenter()
-        let router = MainRouter()
         viewController.interactor = interactor
-        viewController.router = router
         interactor.presenter = presenter
         presenter.viewController = viewController
-        router.viewController = viewController
-        router.dataStore = interactor
     }
     
     // MARK: View lifecycle
@@ -71,14 +66,14 @@ class MainViewController: UITableViewController, MainDisplayLogic {
     // MARK: Do something
     func displayBookData(viewModel: Main.BookData.ViewModelSuccess) {
         tableView.tableFooterView = nil
-
+        
         if totalItemCount == nil {
             totalItemCount = viewModel.displayedBooks.totalItemCount
         }
         
         guard let newData = viewModel.displayedBooks.books else { return }
         self.displayedBooks.append(contentsOf: newData)
-
+        
         let currentDataCount = self.displayedBooks.count
         let totalCount = self.totalItemCount ?? 0
         self.hasNextPage =  currentDataCount >= totalCount - 10 ? false : true

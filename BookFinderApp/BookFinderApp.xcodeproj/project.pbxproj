@@ -24,7 +24,6 @@
 		FDBB75E628C126870087EC43 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75E028C126870087EC43 /* MainViewController.swift */; };
 		FDBB75E728C126870087EC43 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75E128C126870087EC43 /* MainInteractor.swift */; };
 		FDBB75E828C126870087EC43 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75E228C126870087EC43 /* MainPresenter.swift */; };
-		FDBB75E928C126870087EC43 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75E328C126870087EC43 /* MainRouter.swift */; };
 		FDBB75EA28C126870087EC43 /* MainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75E428C126870087EC43 /* MainWorker.swift */; };
 		FDBB75EB28C126870087EC43 /* MainModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75E528C126870087EC43 /* MainModels.swift */; };
 		FDBB75EE28C12C620087EC43 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75ED28C12C620087EC43 /* BookTableViewCell.swift */; };
@@ -70,7 +69,6 @@
 		FDBB75E028C126870087EC43 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FDBB75E128C126870087EC43 /* MainInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		FDBB75E228C126870087EC43 /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		FDBB75E328C126870087EC43 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		FDBB75E428C126870087EC43 /* MainWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWorker.swift; sourceTree = "<group>"; };
 		FDBB75E528C126870087EC43 /* MainModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModels.swift; sourceTree = "<group>"; };
 		FDBB75ED28C12C620087EC43 /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 				FDBB75E028C126870087EC43 /* MainViewController.swift */,
 				FDBB75E128C126870087EC43 /* MainInteractor.swift */,
 				FDBB75E228C126870087EC43 /* MainPresenter.swift */,
-				FDBB75E328C126870087EC43 /* MainRouter.swift */,
 				FDBB75E428C126870087EC43 /* MainWorker.swift */,
 				FDBB75E528C126870087EC43 /* MainModels.swift */,
 			);
@@ -368,7 +365,6 @@
 				FDBB75E728C126870087EC43 /* MainInteractor.swift in Sources */,
 				FDBB756728BFD4160087EC43 /* SearchAPI.swift in Sources */,
 				FDBB75DE28C124080087EC43 /* APIError.swift in Sources */,
-				FDBB75E928C126870087EC43 /* MainRouter.swift in Sources */,
 				FDBB75F728C28F940087EC43 /* LoadingView.swift in Sources */,
 				FDBB75F128C12C6A0087EC43 /* NSObject+.swift in Sources */,
 				FDBB75EE28C12C620087EC43 /* BookTableViewCell.swift in Sources */,
