@@ -14,7 +14,7 @@ final class BookTableViewCell: UITableViewCell {
     
     // MARK: UIComponents
     private lazy var coverImageView = UIImageView().then {
-        $0.image = UIImage(systemName: "book.closed.circle")
+        $0.image = UIImage(systemName: "book")
         $0.tintColor = .label
         $0.contentMode = .scaleAspectFit
     }
@@ -50,6 +50,27 @@ final class BookTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        clearCellData()
+    }
+    
+    // MARK: configure Data
+    func configureData(_ data: Book?) {
+        guard let data = data else {
+            return
+        }
+  
+        coverImageView.loadWithURL(data.thumbnailURL)
+        titleLabel.text = data.title
+        publishedDateLabel.text = data.publishedDate
+        authorLabel.text = data.authors.first
+        descriptionLabel.text = data.description
+    }
+}
+
+private extension BookTableViewCell {
     func setupLayout() {
         [
             coverImageView,
@@ -96,17 +117,10 @@ final class BookTableViewCell: UITableViewCell {
         selectionStyle = .none
     }
     
-    // MARK: configure Data
-    func configureData(_ data: Book?) {
-        guard let data = data else {
-            return
-        }
-  
-        coverImageView.loadWithURL(data.thumbnailURL)
-        titleLabel.text = data.title
-        publishedDateLabel.text = data.publishedDate
-        authorLabel.text = data.authors.first
-        descriptionLabel.text = data.description
+    func clearCellData() {
+        coverImageView.image = UIImage(systemName: "book")
+        titleLabel.text = ""
+        authorLabel.text = ""
+        descriptionLabel.text = ""
     }
-    
 }

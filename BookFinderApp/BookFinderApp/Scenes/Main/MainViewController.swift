@@ -23,7 +23,9 @@ class MainViewController: UITableViewController, MainDisplayLogic {
     
     // MARK: UIComponents
     private lazy var searchController = UISearchController().then {
+        $0.obscuresBackgroundDuringPresentation = false
         $0.searchBar.placeholder = "검색어를 입력해주세요."
+        $0.searchBar.enablesReturnKeyAutomatically = false
         $0.searchBar.delegate = self
     }
     
@@ -62,6 +64,7 @@ class MainViewController: UITableViewController, MainDisplayLogic {
     var displayedBooks: [Book] = []
     var isPaging: Bool = false
     var hasNextPage: Bool = false
+    var lastKeyword: String?
     
     // MARK: Do something
     func displayBookData(viewModel: Main.BookData.ViewModelSuccess) {
@@ -142,8 +145,16 @@ extension MainViewController {
 // MARK: SearchBar
 extension MainViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        displayedBooks.removeAll()
-        fetchBookData()
+        if searchBar.text == "" {
+            displayError(viewModel: Main.BookData.ViewModelFailure.init(errorMessage: "검색어를 입력해주세요."))
+        } else {
+            lastKeyword = searchBar.text
+            totalItemCount = nil
+            displayedBooks.removeAll()
+            tableView.reloadData()
+            tableView.setContentOffset(CGPoint(x: 0, y: tableView.contentSize.height - tableView.bounds.height), animated: true)
+            fetchBookData()
+        }
     }
 }
 
@@ -166,7 +177,7 @@ private extension MainViewController {
     }
     
     func fetchBookData() {
-        if let keyword = searchController.searchBar.text {
+        if let keyword = lastKeyword {
             let request = Main.BookData.Request(keyword: keyword, startIndex: self.displayedBooks.count)
             interactor?.fetchBookData(request: request)
         }
