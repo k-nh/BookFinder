@@ -16,16 +16,12 @@ protocol MainBusinessLogic {
     func fetchBookData(request: Main.BookData.Request)
 }
 
-protocol MainDataStore {
-    //var name: String { get set }
-}
-
 final class MainInteractor {
     var presenter: MainPresentationLogic?
     var worker: MainSceneSearchLogic?
 }
 
-extension MainInteractor: MainBusinessLogic, MainDataStore {
+extension MainInteractor: MainBusinessLogic {
     // MARK: Do something
     func fetchBookData(request: Main.BookData.Request) {
         let service = SearchAPIProvider()
@@ -34,7 +30,6 @@ extension MainInteractor: MainBusinessLogic, MainDataStore {
             DispatchQueue.main.async { [weak self] in
                 switch result {
                 case .success(let data):
-                    print(data)
                     let response = Main.BookData.Response.init(books: data)
                     self?.presenter?.presentData(response: response)
                 case .failure(let error):
