@@ -86,11 +86,7 @@ class MainViewController: UITableViewController, MainDisplayLogic {
     }
     
     func displayError(viewModel: Main.BookData.ViewModelFailure) {
-        let alertController = UIAlertController(title: "오류", message: viewModel.errorMessage, preferredStyle: .alert)
-    
-        let confirmAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-        alertController.addAction(confirmAction)
-        present(alertController, animated: true, completion: nil)
+        presentAlert(viewModel.errorMessage)
     }
 }
 
@@ -146,7 +142,7 @@ extension MainViewController {
 extension MainViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchBar.text == "" {
-            displayError(viewModel: Main.BookData.ViewModelFailure.init(errorMessage: "검색어를 입력해주세요."))
+            presentAlert("검색어를 입력해주세요.")
         } else {
             lastKeyword = searchBar.text
             totalItemCount = nil
@@ -181,5 +177,13 @@ private extension MainViewController {
             let request = Main.BookData.Request(keyword: keyword, startIndex: self.displayedBooks.count)
             interactor?.fetchBookData(request: request)
         }
+    }
+    
+    func presentAlert(_ errorMessage: String) {
+        let alertController = UIAlertController(title: "오류", message: errorMessage, preferredStyle: .alert)
+    
+        let confirmAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alertController.addAction(confirmAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
