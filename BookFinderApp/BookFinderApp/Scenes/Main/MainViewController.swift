@@ -101,7 +101,7 @@ extension MainViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let displayedBook = displayedBooks[indexPath.row]
+        let displayedBook = displayedBooks[safe: indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BookTableViewCell.identifier, for: indexPath) as? BookTableViewCell else {
             return UITableViewCell()
         }
@@ -118,7 +118,11 @@ extension MainViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let displayedBook = displayedBooks[indexPath.row]
+        let displayedBook = displayedBooks[safe: indexPath.row]
+        guard let displayedBook = displayedBook else {
+            return
+        }
+
         if let url = URL(string: displayedBook.infoLink) {
             let safariViewController = SFSafariViewController(url: url)
             self.present(safariViewController, animated: true, completion: nil)

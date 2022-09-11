@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD651DEA28CDFBDF00D9A63A /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD651DE928CDFBDF00D9A63A /* Array+.swift */; };
 		FD9728AE28C2E7FF002550D5 /* MainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9728AD28C2E7FF002550D5 /* MainInteractorTests.swift */; };
 		FD9728B028C2F0B6002550D5 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9728AF28C2F0B6002550D5 /* MainPresenterTests.swift */; };
 		FD9728BB28C31165002550D5 /* MainWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9728BA28C31165002550D5 /* MainWorkerSpy.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD651DE928CDFBDF00D9A63A /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		FD9728AD28C2E7FF002550D5 /* MainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTests.swift; sourceTree = "<group>"; };
 		FD9728AF28C2F0B6002550D5 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
 		FD9728BA28C31165002550D5 /* MainWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorkerSpy.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			children = (
 				FDBB75F028C12C6A0087EC43 /* NSObject+.swift */,
 				FDBB75F428C1CAEC0087EC43 /* UIImageView+.swift */,
+				FD651DE928CDFBDF00D9A63A /* Array+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				FDBB75F728C28F940087EC43 /* LoadingView.swift in Sources */,
 				FDBB75F128C12C6A0087EC43 /* NSObject+.swift in Sources */,
 				FDBB75EE28C12C620087EC43 /* BookTableViewCell.swift in Sources */,
+				FD651DEA28CDFBDF00D9A63A /* Array+.swift in Sources */,
 				FDBB75EA28C126870087EC43 /* MainWorker.swift in Sources */,
 				FDBB75EB28C126870087EC43 /* MainModels.swift in Sources */,
 				FDBB75E628C126870087EC43 /* MainViewController.swift in Sources */,
