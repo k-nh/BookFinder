@@ -34,6 +34,7 @@
 		FDBB75F128C12C6A0087EC43 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75F028C12C6A0087EC43 /* NSObject+.swift */; };
 		FDBB75F528C1CAEC0087EC43 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75F428C1CAEC0087EC43 /* UIImageView+.swift */; };
 		FDBB75F728C28F940087EC43 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB75F628C28F940087EC43 /* LoadingView.swift */; };
+		FDE21CA828D32F0500CA9811 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE21CA728D32F0500CA9811 /* ImageCacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		FDBB75F028C12C6A0087EC43 /* NSObject+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		FDBB75F428C1CAEC0087EC43 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		FDBB75F628C28F940087EC43 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		FDE21CA728D32F0500CA9811 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		FD9728BF28C31700002550D5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FDE21CA728D32F0500CA9811 /* ImageCacheManager.swift */,
 				FDBB75EF28C12C6A0087EC43 /* Extensions */,
 			);
 			name = Utils;
@@ -385,6 +388,7 @@
 			files = (
 				FDBB758828C079DA0087EC43 /* GoogleBookData.swift in Sources */,
 				FDBB752C28BFCFD50087EC43 /* AppDelegate.swift in Sources */,
+				FDE21CA828D32F0500CA9811 /* ImageCacheManager.swift in Sources */,
 				FDBB75CB28C0D7E90087EC43 /* SearchAPIProvider.swift in Sources */,
 				FDBB75CD28C0D83A0087EC43 /* HTTPMethod.swift in Sources */,
 				FDBB75F528C1CAEC0087EC43 /* UIImageView+.swift in Sources */,
@@ -571,7 +575,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = SQ5T25W9V5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookFinderApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -598,7 +602,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = SQ5T25W9V5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookFinderApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
